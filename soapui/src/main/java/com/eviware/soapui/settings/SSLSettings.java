@@ -1,5 +1,5 @@
 /*
- * SoapUI, Copyright (C) 2004-2019 SmartBear Software
+ * SoapUI, Copyright (C) 2004-2022 SmartBear Software
  *
  * Licensed under the EUPL, Version 1.1 or - as soon as they will be approved by the European Commission - subsequent 
  * versions of the EUPL (the "Licence"); 
@@ -25,10 +25,6 @@ import com.eviware.soapui.settings.Setting.SettingType;
  */
 
 public interface SSLSettings {
-
-    @Setting(name = "Use Windows Keystore", description = "This enables CAC reading capability", type = SettingType.BOOLEAN)
-    public final static String WINDOWS_KEYSTORE = SSLSettings.class.getSimpleName() + "@" + "WindowsKeystore";
-
     @Setting(name = "KeyStore", description = "local keyStore to use", type = SettingType.FILE)
     public final static String KEYSTORE = SSLSettings.class.getSimpleName() + "@" + "keyStore";
 

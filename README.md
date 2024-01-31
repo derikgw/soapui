@@ -36,8 +36,8 @@ By downloading our software, you agree to our [license](https://www.soapui.org/d
 
 ### Prerequisites
 
-* [JDK 8 (update 112 or later)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [Maven (version 3.0.0 or later)](http://maven.apache.org/)
+* [OpenJDK 16](https://openjdk.java.net/projects/jdk/16/)
+* [Maven (version 3.0.5 or later)](http://maven.apache.org/)
 * [Git (version 1.8 or later)](http://git-scm.com)
 
 ### Get the source code for the first time
@@ -116,7 +116,9 @@ SoapUI Open Source offers basic functionality for API testing. For additional fe
 
 ## Additional resources
 
+* [SoapUI community](https://community.smartbear.com/t5/SoapUI-Open-Source/bd-p/SoapUI_OS) - SmartBear's SoapUI Open Source community for discussing and participating in all things SoapUI.
 * [SoapUI Groovy examples](https://github.com/SmartBear/soapui-groovy-examples) - This is a collection of SoapUI projects and Groovy scripts used to demonstrate the Groovy scripting capabilities in SoapUI.
 * [Extending SoapUI](http://www.soapui.org/Developers-Corner/extending-soapui.html)
 * [Custom factories](http://www.soapui.org/Developers-Corner/custom-factories.html)
 * [Integrating with SoapUI](http://www.soapui.org/Developers-Corner/integrating-with-soapui.html)
+* [Mastering SoapUI](https://www.packtpub.com/web-development/mastering-soapui) - Master the art of testing and automating your SOA using SoapUI

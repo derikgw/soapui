@@ -7,7 +7,7 @@
   <parent>
     <artifactId>soapui-project</artifactId>
     <groupId>com.smartbear.soapui</groupId>
-    <version>5.5.0</version>
+    <version>5.7.2</version>
   </parent>
 
   <artifactId>soapui-installer</artifactId>
@@ -23,10 +23,9 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
-            <version>1.2.1</version>
             <executions>
               <execution>
-                <phase>package</phase>
+                <phase>prepare-package</phase>
                 <goals>
                   <goal>java</goal>
                 </goals>
@@ -47,7 +46,6 @@
           <plugin>
             <groupId>com.github.danielflower.mavenplugins</groupId>
             <artifactId>maven-gitlog-plugin</artifactId>
-            <version>1.4.11</version>
             <configuration>
               <reportTitle>
                 SoapUI ${project.version} | https://github.com/SmartBear/soapui/tree/maintenance
@@ -61,14 +59,12 @@
 
           <plugin>
             <artifactId>maven-assembly-plugin</artifactId>
-            <version>2.3</version>
             <configuration>
               <outputDirectory>${assembly.build.directory}</outputDirectory>
               <descriptors>
                 <descriptor>src/main/assembly/dist.xml</descriptor>
                 <descriptor>src/main/assembly/dist-standalone.xml</descriptor>
                 <descriptor>src/main/assembly/windows-bin.xml</descriptor>
-                <descriptor>src/main/assembly/win32-standalone-bin.xml</descriptor>
                 <descriptor>src/main/assembly/linux-bin.xml</descriptor>
                 <descriptor>src/main/assembly/mac-bin.xml</descriptor>
               </descriptors>
@@ -102,7 +98,6 @@
           <plugin>
             <groupId>org.sonatype.install4j</groupId>
             <artifactId>install4j-maven-plugin</artifactId>
-            <version>1.1.1</version>
             <configuration>
               <installDir>${install4j.home}</installDir>
               <release>${project.version}</release>
@@ -161,16 +156,12 @@
           <plugin>
             <groupId>net.ju-n.maven.plugins</groupId>
             <artifactId>maven-checksum-plugin</artifactId>
-            <version>1.0</version>
             <configuration>
               <!-- TODO parameterize this better-->
               <files>
                 <!-- Archives -->
                 <file>
                   ${assembly.build.directory}/${project.name.visible}-${project.version}-windows-bin.zip
-                </file>
-                <file>
-                  ${assembly.build.directory}/${project.name.visible}-${project.version}-win32-standalone-bin.zip
                 </file>
                 <file>
                   ${assembly.build.directory}/${project.name.visible}-${project.version}-linux-bin.tar.gz
@@ -180,13 +171,7 @@
                 </file>
                 <!-- Installers -->
                 <file>
-                  ${installer.build.directory}/${project.name.visible}-x32-${project.version}.exe
-                </file>
-                <file>
                   ${installer.build.directory}/${project.name.visible}-x64-${project.version}.exe
-                </file>
-                <file>
-                  ${installer.build.directory}/${project.name.visible}-x32-${project.version}.sh
                 </file>
                 <file>
                   ${installer.build.directory}/${project.name.visible}-x64-${project.version}.sh
@@ -222,7 +207,7 @@
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-api</artifactId>
-      <version>2.0</version>
+      <version>${maven-plugin-api.version}</version>
     </dependency>
   </dependencies>
 
