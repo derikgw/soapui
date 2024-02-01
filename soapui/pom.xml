@@ -787,7 +787,6 @@
             <version>${io.swagger.swagger-parser.version}</version>
         </dependency>
 
-
     </dependencies>
 
 </project>

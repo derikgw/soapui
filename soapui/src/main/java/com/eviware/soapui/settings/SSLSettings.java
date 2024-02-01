@@ -25,6 +25,9 @@ import com.eviware.soapui.settings.Setting.SettingType;
  */
 
 public interface SSLSettings {
+    @Setting(name = "UseWindowsKeystore", description = "Use Windows Keystore", type = SettingType.BOOLEAN)
+    public final static String USE_WINDOWS_KEYSTORE = SSLSettings.class.getSimpleName() + "@" + "useWindowsKeystore";
+
     @Setting(name = "KeyStore", description = "local keyStore to use", type = SettingType.FILE)
     public final static String KEYSTORE = SSLSettings.class.getSimpleName() + "@" + "keyStore";
 
