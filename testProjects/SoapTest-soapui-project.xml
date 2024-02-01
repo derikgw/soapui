@@ -627,6 +627,9 @@ if ("true".equals(context.getProperty("moreData"))) {
     testRunner.gotoStepByName("DataSource")
 }</script></con:config></con:testStep><con:setupScript>import solutions.derikwilson.datasource.excel.DataSource
 
+// This is the DataSet object.  We are executing this so that the class can
+// be accessed from the context object.  The DataSet class contains the dataSet list with all of the
+// request data from the input data source.
 def currentProject = testRunner.testCase.testSuite.project
 currentProject
     .testSuites["SOAPDemoSoap TestSuite"]
