@@ -588,14 +588,6 @@ def dataSourceProperties = dataSet.getDataSet()
 
 def currentRow = context.getProperty("Data_currentRow")?.toInteger() ?: 0
 
-/*
-dataSourceProperties.eachWithIndex { propertyMap, index ->
-    propertyMap.eachWithIndex { propertyName, propertyValue, index2 ->
-    // Store each property in the TestSuite custom properties
-    testCase.setPropertyValue("Data_${propertyName}", propertyValue)
-}
-*/
-
 def rowCount = context.testCase.testSuite.getPropertyValue("Data_rowCount").toInteger()
 context.setProperty("moreData","true")
 log.info("currentRow: $currentRow")
